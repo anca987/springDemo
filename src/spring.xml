@@ -3,6 +3,8 @@
 
 <beans>
 
-	<bean id="triangle" class="org.beanfactory.Triangle"/>
+	<bean id="triangle" class="org.beanfactory.Triangle">
+		<property name="type" value="Equilateral"/>
+	</bean>
 	
 </beans>
