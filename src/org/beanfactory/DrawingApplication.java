@@ -11,7 +11,7 @@ public class DrawingApplication {
 		
 		Triangle triangle = (Triangle) context.getBean("triangle");
 		triangle.draw();
-		System.out.println(triangle.getType());
+		System.out.println(triangle.getType() + " - " + triangle.getHeight());
 	}
 
 }
