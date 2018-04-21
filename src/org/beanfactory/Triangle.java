@@ -1,44 +1,59 @@
 package org.beanfactory;
 
-import java.util.List;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+public class Triangle implements InitializingBean, DisposableBean{
 
-import org.beanfactory.Point;
+	private Point pointA;
+	private Point pointB;
+	private Point pointC;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware {
-
-	private List<Point> points;
-	private ApplicationContext context = null;
-
-//	public void draw() {
-//		System.out.println("Point A = (" + getPointA().getX() + ", "
-//				+ getPointA().getY() + ")");
-//		System.out.println("Point A = (" + getPointB().getX() + ", "
-//				+ getPointB().getY() + ")");
-//		System.out.println("Point A = (" + getPointC().getX() + ", "
-//				+ getPointC().getY() + ")");
-//	}
-
-	@Override
-	public void setApplicationContext(ApplicationContext context)
-			throws BeansException {
-		this.context = context;
+	public Point getPointA() {
+		return pointA;
 	}
 
-	@Override
-	public void setBeanName(String beanName) {
-		System.out.println("Bean name is: " + beanName);
+	public void setPointA(Point pointA) {
+		this.pointA = pointA;
 	}
 
-	public List<Point> getPoints() {
-		return points;
+	public Point getPointB() {
+		return pointB;
 	}
 
-	public void setPoints(List<Point> points) {
-		this.points = points;
+	public void setPointB(Point pointB) {
+		this.pointB = pointB;
 	}
+
+	public Point getPointC() {
+		return pointC;
+	}
+
+	public void setPointC(Point pointC) {
+		this.pointC = pointC;
+	}
+
+	public void draw() {
+		System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
+		System.out.println("Point A = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
+		System.out.println("Point A = (" + getPointC().getX() + ", " + getPointC().getY() + ")");
+	}
+
+	public void myInit() {
+		System.out.println("mtInit() method called for Triangle");
+	}
+
+	public void cleanUp() {
+		System.out.println("cleanUp() method called for Triangle");
+	}
+
+	 @Override
+	 public void afterPropertiesSet() throws Exception {
+		 System.out.println("InitializingBean init method called for Triangle");
+	 }
+	
+	 @Override
+	 public void destroy() throws Exception {
+		 System.out.println("DisposableBean destroy method called for Triangle");
+	 }
 }
