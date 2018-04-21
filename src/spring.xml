@@ -3,27 +3,21 @@
 
 <beans>
 
-	<bean id="triangle" class="org.beanfactory.Triangle">
-		<property name="points">
-			<list>
-				<ref bean="point1"/>
-				<ref bean="point2"/>
-				<ref bean="point3"/>
-			</list>
-		</property>
+	<bean id="triangle" class="org.beanfactory.Triangle" autowire="byName">
+		
 	</bean>
 	
-	<bean id="point1" class="org.beanfactory.Point">
+	<bean id="pointA" class="org.beanfactory.Point">
 		<property name="x" value="0"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="point2" class="org.beanfactory.Point">
+	<bean id="pointB" class="org.beanfactory.Point">
 		<property name="x" value="-20"></property>
 		<property name="y" value="0"></property>
 	</bean>
 	
-	<bean id="point3" class="org.beanfactory.Point">
+	<bean id="pointC" class="org.beanfactory.Point">
 		<property name="x" value="0"></property>
 		<property name="y" value="20"></property>
 	</bean>
