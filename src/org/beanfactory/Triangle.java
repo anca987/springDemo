@@ -2,36 +2,37 @@ package org.beanfactory;
 
 public class Triangle {
 
-	private String type;
-	private int height;
-
-	public Triangle(int height) {
-		this.height = height;
-	}
-
-	public Triangle(String type) {
-		this.type = type;
-	}
-
-	public Triangle(String type, int height) {
-		this.type = type;
-		this.height = height;
-	}
+	private Point pointA;
+	private Point pointB;
+	private Point pointC;
 
 	public void draw() {
-		System.out.println("Drawing a triangle...");
+		System.out.println("Point A = (" + getPointA() + ")" + ", Point B = ("
+				+ getPointB() + ")" + ", Point C = (" + getPointC() + ")");
 	}
 
-	public String getType() {
-		return type;
+	public Point getPointA() {
+		return pointA;
 	}
 
-	public int getHeight() {
-		return height;
+	public void setPointA(Point pointA) {
+		this.pointA = pointA;
 	}
 
-	// public void setType(String type) {
-	// this.type = type;
-	// }
+	public Point getPointB() {
+		return pointB;
+	}
+
+	public void setPointB(Point pointB) {
+		this.pointB = pointB;
+	}
+
+	public Point getPointC() {
+		return pointC;
+	}
+
+	public void setPointC(Point pointC) {
+		this.pointC = pointC;
+	}
 
 }
