@@ -1,9 +1,7 @@
 package org.beanfactory;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle {
+public class Triangle implements Shape{
 
 	private Point pointA;
 	private Point pointB;
@@ -33,7 +31,9 @@ public class Triangle {
 		this.pointC = pointC;
 	}
 
+	@Override
 	public void draw() {
+		System.out.println("Drawing Triangle");
 		System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
 		System.out.println("Point A = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
 		System.out.println("Point A = (" + getPointC().getX() + ", " + getPointC().getY() + ")");
