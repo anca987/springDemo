@@ -1,14 +1,13 @@
 package org.beanfactory;
 
-import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingApplication {
 
 	public static void main(String[] args) {
 
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		context.registerShutdownHook();
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		
 		Triangle triangle = (Triangle) context.getBean("triangle");
 		triangle.draw();
