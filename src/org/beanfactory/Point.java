@@ -1,5 +1,6 @@
 package org.beanfactory;
 
+
 public class Point {
 
 	private int x;
